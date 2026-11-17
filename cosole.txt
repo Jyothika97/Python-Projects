@@ -1,0 +1,22 @@
+tasks = ["Learn Python", "Build a project"]
+
+while True:
+    print("\n--- MY TO-DO LIST ---")
+    for i, t in enumerate(tasks, 1):
+        print(f"{i}. {t}")
+        
+    print("\n1. Add Task /n2. Delete Task/n3. Quit")
+    choice = input("Choose (1/2/3): ")
+    
+    if choice == "1":
+        new_t = input("Enter new task: ")
+        tasks.append(new_t)
+    elif choice == "2":
+        num = int(input("Enter task number to delete:"))
+        if 1 <= num <= len(tasks):
+            removed = tasks.pop(num - 1)
+            print(f"Removed: {removed}")
+        else:
+            print("Invalid number!")
+    elif choice == "3":
+        print("Goodbye!")
